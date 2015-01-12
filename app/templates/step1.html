@@ -1,0 +1,18 @@
+<h1 class="title">Step 1</h1>
+<div class="module tpl-textcallout dtm-pt-callout">
+
+    <section class="paragraph rich-content">
+        <select>
+        <% _.each(giftCards, function (item) { %>
+            <option value="<%- item.itemNumber %>"><%- item.name %></option>
+        <% }); %>
+        </select>
+    </section>
+
+
+    <section class="paragraph rich-content">
+        <nav class="button-container centered">
+            <a href="#step2" class="box white button inline">Step 2</a>
+        </nav>
+    </section>
+</div>
