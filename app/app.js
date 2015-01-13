@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 
   var $ = require('jquery');
   var Backbone = require('backbone');
-  var Store = require('./entities/store');
+  //var Store = require('./entities/store');
   var Layout = require('backbone.layoutmanager');
   //var NavComponent = require('components/nav');
 
@@ -13,8 +13,8 @@ define(function (require, exports, module) {
 
   var app = {
     // The root path to run the application.
-    root: '/',
-    store: new Store()
+    root: '/'
+    //store: new Store()
   };
 
   // Configure LayoutManager with Backbone Boilerplate defaults.
@@ -25,7 +25,7 @@ define(function (require, exports, module) {
     // Set the prefix to where your templates live on the server, but keep in
     // mind that this prefix needs to match what your production paths will be.
     // Typically those are relative.  So we'll add the leading `/` in `fetch`.
-    prefix: 'app/templates/',
+    prefix: 'templates/',
 
     // This method will check for prebuilt templates first and fall back to
     // loading in via AJAX.

@@ -17,9 +17,11 @@ define(function (require, exports, module) {
      * Get Step1 Page
      */
     msgBus.commands.setHandler('step1:get', function(){
-        require(['./controllers/step1'], function (controller) {
-            module.exports = controller.getStep();
-        });
+        //var controller = require('controllers/step1');
+        //controller.getStep();
+        //require(['./controllers/step1'], function (controller) {
+        //    controller.getStep();
+        //});
     });
 
     /***
@@ -92,6 +94,14 @@ define(function (require, exports, module) {
             controller.hide();
         });
     });
+
+
+    //msgBus.reqres.setHandler('gift-card:entities', function () {
+    //    var entities = require('entities/gift-card');
+    //    return entities.getGiftCardEntities();
+    //});
+
+
 
     module.exports = msgBus;
 });

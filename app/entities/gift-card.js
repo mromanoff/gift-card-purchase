@@ -1,7 +1,7 @@
-define(function (require) {
+define(function (require, exports, module) {
     'use strict';
 
-    var app = require('app');
+    //var app = require('app');
     var Backbone = require('backbone');
     var msgBus = require('msgbus');
     var Entities = {};
@@ -25,23 +25,27 @@ define(function (require) {
             var collection = new Entities.GiftCardCollection();
             var defer = $.Deferred();
             // show loading view  while fetching data
-            msgBus.commands.execute('loading:show', {message: 'Loading...'});  // you can pass message. it is optional
+          //  msgBus.commands.execute('loading:show', {message: 'Loading...'});  // you can pass message. it is optional
 
-            // setTimeout(function () {
+            setTimeout(function () {
             collection.fetch({
                 success: function (data) {
                     defer.resolve(data);
-                    msgBus.commands.execute('loading:hide');
+                   // msgBus.commands.execute('loading:hide');
                 },
                 error: function (model, jqXHR, textStatus) {
-                    msgBus.commands.execute('loading:hide');
+                   // msgBus.commands.execute('loading:hide');
                     defer.reject(model, jqXHR, textStatus);
                 }
             });
-            // }, 1000);
+            }, 1000);
             return defer.promise();
         }
     };
+
+    //return API.getGiftCardEntities();
+
+    //module.exports = API;
 
     msgBus.reqres.setHandler('gift-card:entities', function () {
         return API.getGiftCardEntities();
