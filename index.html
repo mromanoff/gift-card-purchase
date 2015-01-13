@@ -146,43 +146,63 @@
 
 </footer>
 
-
 <!-- Application source. -->
 <!-- build:[src] /source.min.js -->
 <script src="/bower_components/requirejs/require.js" data-main="/app/config"></script>
 <!-- /build -->
 
+<!--<script src="js/apps/gift-card-purchase/main.js"></script>-->
 
-<!--<script type="text/x-handlebars-template" id="step1">-->
-    <!--<h1 class="title">Step 1</h1>-->
-    <!--<div class="module tpl-textcallout dtm-pt-callout">-->
-        <!--<section class="paragraph rich-content">-->
-            <!--<nav class="button-container centered">-->
-                <!--<a href="#step2" class="box white button inline">Step 2</a>-->
-            <!--</nav>-->
-        <!--</section>-->
-    <!--</div>-->
-<!--</script>-->
 
-<!--<script type="text/x-handlebars-template" id="step2">-->
-    <!--<h1 class="title">Step 2</h1>-->
-    <!--<div class="module tpl-textcallout dtm-pt-callout">-->
-        <!--<section class="paragraph rich-content">-->
-            <!--<nav class="button-container centered">-->
-                <!--<a href="#step3" class="box white button inline">Step 3</a>-->
-            <!--</nav>-->
-        <!--</section>-->
-    <!--</div>-->
-<!--</script>-->
+<script type="text/x-handlebars-template" id="step1">
+    <h1 class="title">Gift Purchase</h1>
+    <div class="module tpl-textcallout dtm-pt-callout">
+        <section class="paragraph rich-content">
+            <nav class="button-container centered">
+                <a href="#step2" class="box white button inline">Step 2</a>
+            </nav>
+        </section>
+        <section class="paragraph rich-content">
+            <select>
+                <% _.each(giftCards, function (item) { %>
+                <option value="<%- item.itemNumber %>"><%- item.name %></option>
+                <% }); %>
+            </select>
+        </section>
+    </div>
+</script>
 
-<!--<script type="text/x-handlebars-template" id="step3">-->
-    <!--<h1 class="title">Step 3</h1>-->
-    <!--<div class="module tpl-textcallout dtm-pt-callout">-->
-        <!--<section class="paragraph rich-content">-->
-            <!--<p>Thank you</p>-->
-        <!--</section>-->
-    <!--</div>-->
-<!--</script>-->
+
+<script  type="text/x-handlebars-template" id="step1-item">
+    dsafsadva
+
+</script>
+
+
+<script  type="text/x-handlebars-template" id="step1-list">
+    dsafsadvaa
+
+</script>
+
+<script type="text/x-handlebars-template" id="step2">
+    <h1 class="title">Step 2</h1>
+    <div class="module tpl-textcallout dtm-pt-callout">
+        <section class="paragraph rich-content">
+            <nav class="button-container centered">
+                <a href="#step3" class="box white button inline">Step 3</a>
+            </nav>
+        </section>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="step3">
+    <h1 class="title">Step 3</h1>
+    <div class="module tpl-textcallout dtm-pt-callout">
+        <section class="paragraph rich-content">
+            <p>Thank you</p>
+        </section>
+    </div>
+</script>
 
 
 

@@ -25,7 +25,7 @@ define(function (require, exports, module) {
     // Set the prefix to where your templates live on the server, but keep in
     // mind that this prefix needs to match what your production paths will be.
     // Typically those are relative.  So we'll add the leading `/` in `fetch`.
-    prefix: 'app/templates/',
+    //prefix: 'app/templates/',
 
     // This method will check for prebuilt templates first and fall back to
     // loading in via AJAX.

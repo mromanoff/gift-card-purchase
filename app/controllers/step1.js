@@ -7,13 +7,14 @@ define(function (require, exports, module) {
     var controller = {};
 
     controller.getStep = function () {
+
         require('entities/gift-card');
         var fetching = msgBus.reqres.request('gift-card:entities');
         $.when(fetching).then(function (giftCards) {
 
-            msgBus.commands.execute('store:set', {
-                giftCards: giftCards
-            });
+            //msgBus.commands.execute('store:set', {
+            //    giftCards: giftCards
+            //});
 
             app.layout.setView('.main-container', new View({
                 collection: giftCards
