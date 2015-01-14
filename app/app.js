@@ -11,9 +11,13 @@ define(function (require, exports, module) {
   // creation.
 
 
-  var app = {
-    // The root path to run the application.
-    root: '/'
+  var App = {
+    // The root path to run the Application.
+    root: '/',
+    // API endpoint.
+    api: {
+      giftCards:  '/App/api/gift-cards-catalog.json'
+    }
     //store: new Store()
   };
 
@@ -25,7 +29,7 @@ define(function (require, exports, module) {
     // Set the prefix to where your templates live on the server, but keep in
     // mind that this prefix needs to match what your production paths will be.
     // Typically those are relative.  So we'll add the leading `/` in `fetch`.
-    prefix: 'templates/',
+    //prefix: 'templates/',
 
     // This method will check for prebuilt templates first and fall back to
     // loading in via AJAX.
@@ -46,7 +50,7 @@ define(function (require, exports, module) {
       var done = this.async();
 
       // Fetch via jQuery's GET.  The third argument specifies the dataType.
-      $.get(app.root + path, function(contents) {
+      $.get(App.root + path, function(contents) {
         // Assuming you're using underscore templates, the compile step here is
         // `_.template`.
         done(_.template(contents));
@@ -57,10 +61,10 @@ define(function (require, exports, module) {
   // for debug
   //window.store =  app.store;
 
-  app.layout = new Backbone.Layout({
-    el: '#main',
+  App.layout = new Backbone.Layout({
+    el: '#app-main',
     template: 'layouts/main'
   });
 
-  module.exports = app;
+  module.exports = App;
 });

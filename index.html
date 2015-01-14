@@ -27,7 +27,7 @@
 </head>
 
 <body>
-<body data-layout="MainLayout">
+<body>
 
 <nav class="main-transparent is-mobile" data-component="navigation">
     <a href="" class="menu icon-menu is-mobile"></a>
@@ -106,7 +106,7 @@
 </nav>
 
 <!-- Application container. -->
-<div class="page gift-card-purchase" role="main" id="main"></div>
+<div class="page gift-card-purchase" role="main" id="app-main"></div>
 
 
 <footer>
@@ -153,16 +153,24 @@
 <!-- /build -->
 
 
-<!--<script type="text/x-handlebars-template" id="step1">-->
-    <!--<h1 class="title">Step 1</h1>-->
-    <!--<div class="module tpl-textcallout dtm-pt-callout">-->
-        <!--<section class="paragraph rich-content">-->
-            <!--<nav class="button-container centered">-->
-                <!--<a href="#step2" class="box white button inline">Step 2</a>-->
-            <!--</nav>-->
-        <!--</section>-->
-    <!--</div>-->
-<!--</script>-->
+<script type="text/x-handlebars-template" id="step1">
+    <h1 class="title">Step 1</h1>
+    <div class="module tpl-textcallout dtm-pt-callout">
+
+        <section class="paragraph rich-content">
+            <select>
+
+            </select>
+        </section>
+
+
+        <section class="paragraph rich-content">
+            <nav class="button-container centered">
+                <a href="#step2" class="box white button inline">Step 2</a>
+            </nav>
+        </section>
+    </div>
+</script>
 
 <!--<script type="text/x-handlebars-template" id="step2">-->
     <!--<h1 class="title">Step 2</h1>-->
