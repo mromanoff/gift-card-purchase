@@ -16,10 +16,11 @@ define(function (require, exports, module) {
 
     step1: function () {
         console.log('route get step1:');
-        //msgBus.commands.execute('step1:get');
-      require(['./controllers/step1'], function (controller) {
-        module.exports = controller.getStep();
-      });
+      //  //msgBus.commands.execute('step1:get');
+      //var controller = require('./controllers/step1');
+      //controller.getStep();
+
+      msgBus.commands.execute('step1:get');
     },
 
     step2: function () {

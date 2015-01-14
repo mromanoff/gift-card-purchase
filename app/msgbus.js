@@ -17,9 +17,14 @@ define(function (require, exports, module) {
      * Get Step1 Page
      */
     msgBus.commands.setHandler('step1:get', function(){
-        require(['./controllers/step1'], function (controller) {
-            module.exports = controller.getStep();
-        });
+        //require(['./controllers/step1'], function (controller) {
+        //    module.exports = controller.getStep();
+        //
+        //
+        //});
+
+        var controller = require('./controllers/step1');
+        controller.getStep();
     });
 
     /***
