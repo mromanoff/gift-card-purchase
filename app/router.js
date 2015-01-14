@@ -2,6 +2,9 @@ define(function (require, exports, module) {
     'use strict';
 
     var Backbone = require('backbone');
+    var Step1Module = require('./step1/module');
+    var Step2Module = require('./step2/module');
+    var Step3Module = require('./step3/module');
 
 
     // Defining the application router.
@@ -15,21 +18,15 @@ define(function (require, exports, module) {
         },
 
         step1: function () {
-            console.log('route get step1:');
-            var Step1Module = require('./step1/module');
             Step1Module.init();
         },
 
         step2: function () {
-            console.log('route get step2:');
-            var Step1Module = require('./step2/module');
-            Step1Module.init();
+            Step2Module.init();
         },
 
         step3: function () {
-            console.log('route get step3:');
-            var Step1Module = require('./step3/module');
-            Step1Module.init();
+            Step3Module.init();
         }
     });
 });
