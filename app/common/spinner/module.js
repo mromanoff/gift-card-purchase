@@ -2,7 +2,7 @@ define(function (require, exports, module) {
     'use strict';
 
     var Backbone = require('backbone');
-    var LoadingView = require('views/loading');
+    var LoadingView = require('./view');
     var loadinglModule = {};
 
     var layout = new Backbone.Layout({

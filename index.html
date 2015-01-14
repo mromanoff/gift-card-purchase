@@ -18,16 +18,8 @@
     <link href="http://media2.equinox.com/assets/images/favicon.ico?fab09b054778a" rel="icon" type="image/x-icon"/>
     <link href="http://media2.equinox.com/assets/images/favicon.ico?fab09b054778a" rel="apple-touch-icon"/>
     <link href="http://media2.equinox.com/assets/images/favicon.ico?fab09b054778a" rel="apple-touch-icon-precomposed"/>
-
-
-    <!-- Application styles. -->
-    <!-- build:[href] /styles.min.css -->
-    <!--<link rel="stylesheet" href="/app/styles/index.css">-->
-    <!-- /build -->
 </head>
-
 <body>
-<body data-layout="MainLayout">
 
 <nav class="main-transparent is-mobile" data-component="navigation">
     <a href="" class="menu icon-menu is-mobile"></a>
@@ -75,7 +67,6 @@
                 <img src="http://media2.equinox.com/assets/images/equinox-logo.png?fab09b054778a"/>
             </a>
         </h1>
-
         <div class="links-wrapper is-tablet is-desktop">
             <ul class="main-links">
                 <li class=""><a class="menu-clubs" href="/clubs">CLUBS</a></li>
@@ -86,7 +77,6 @@
                 <li class=""><a class="menu-q blog" href="http://q.equinox.com">Q BLOG</a></li>
                 <li class=""><a class="menu-join" href="/join/step1">JOIN</a></li>
             </ul>
-
             <ul class="secondary-links">
                 <li
                         id="clubPagechatbutton6"
@@ -96,18 +86,15 @@
                 <li
                         class=""><a class="menu-sign in" href="/login">SIGN IN</a></li>
             </ul>
-
             <ul class="member-dropdown member-desktop">
                 <li><a href="" class="logout-link" data-component="logout" data-bypass="true">Logout</a></li>
             </ul>
         </div>
     </div>
-
 </nav>
 
 <!-- Application container. -->
-<div class="page gift-card-purchase" role="main" id="main"></div>
-
+<div class="page gift-card-purchase" role="main" id="app-main"></div>
 
 <footer>
     <ul class="social-icons">
@@ -143,7 +130,6 @@
         <li
                 class=""><a class="menu-privacy policy" href="/Privacy">Privacy Policy</a></li>
     </ul>
-
 </footer>
 
 <!-- Application source. -->
@@ -151,37 +137,27 @@
 <script src="/bower_components/requirejs/require.js" data-main="/app/config"></script>
 <!-- /build -->
 
-<!--<script src="js/apps/gift-card-purchase/main.js"></script>-->
-
+<script type="text/x-handlebars-template" id="layout">
+    <div class="main-container"></div>
+</script>
 
 <script type="text/x-handlebars-template" id="step1">
-    <h1 class="title">Gift Purchase</h1>
+    <h1 class="title">Step 1</h1>
     <div class="module tpl-textcallout dtm-pt-callout">
+     <section class="paragraph rich-content">
+            <select></select>
+        </section>
+
         <section class="paragraph rich-content">
             <nav class="button-container centered">
                 <a href="#step2" class="box white button inline">Step 2</a>
             </nav>
         </section>
-        <section class="paragraph rich-content">
-            <select>
-                <% _.each(giftCards, function (item) { %>
-                <option value="<%- item.itemNumber %>"><%- item.name %></option>
-                <% }); %>
-            </select>
-        </section>
     </div>
 </script>
 
-
-<script  type="text/x-handlebars-template" id="step1-item">
-    dsafsadva
-
-</script>
-
-
-<script  type="text/x-handlebars-template" id="step1-list">
-    dsafsadvaa
-
+<script type="text/x-handlebars-template" id="option-item">
+    <option value="<%- itemNumber %>"><%- name %></option>
 </script>
 
 <script type="text/x-handlebars-template" id="step2">
@@ -203,9 +179,5 @@
         </section>
     </div>
 </script>
-
-
-
-
 </body>
 </html>

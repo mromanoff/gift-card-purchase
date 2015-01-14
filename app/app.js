@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 
   var $ = require('jquery');
   var Backbone = require('backbone');
-  var Store = require('./entities/store');
+  //var Store = require('./entities/store');
   var Layout = require('backbone.layoutmanager');
   //var NavComponent = require('components/nav');
 
@@ -11,10 +11,14 @@ define(function (require, exports, module) {
   // creation.
 
 
-  var app = {
-    // The root path to run the application.
+  var App = {
+    // The root path to run the Application.
     root: '/',
-    store: new Store()
+    // API endpoint.
+    api: {
+      giftCards:  '/App/api/gift-cards-catalog.json'
+    }
+    //store: new Store()
   };
 
   // Configure LayoutManager with Backbone Boilerplate defaults.
@@ -25,42 +29,42 @@ define(function (require, exports, module) {
     // Set the prefix to where your templates live on the server, but keep in
     // mind that this prefix needs to match what your production paths will be.
     // Typically those are relative.  So we'll add the leading `/` in `fetch`.
-    //prefix: 'app/templates/',
+    //prefix: 'templates/',
 
     // This method will check for prebuilt templates first and fall back to
     // loading in via AJAX.
-    fetchTemplate: function(path) {
-      // Check for a global JST object.  When you build your templates for
-      // production, ensure they are all attached here.
-      var JST = window.JST || {};
-      // Concatenate the file extension.
-      path = path + '.html';
-
-      // If the path exists in the object, use it instead of fetching remotely.
-      if (JST[path]) {
-        return JST[path];
-      }
-
-      // If it does not exist in the JST object, mark this function as
-      // asynchronous.
-      var done = this.async();
-
-      // Fetch via jQuery's GET.  The third argument specifies the dataType.
-      $.get(app.root + path, function(contents) {
-        // Assuming you're using underscore templates, the compile step here is
-        // `_.template`.
-        done(_.template(contents));
-      }, 'text');
-    }
+    //fetchTemplate: function(path) {
+    //    // Check for a global JST object.  When you build your templates for
+    //    // production, ensure they are all attached here.
+    //    var JST = window.JST || {};
+    //    // Concatenate the file extension.
+    //    path = path + '.html';
+    //
+    //    // If the path exists in the object, use it instead of fetching remotely.
+    //    if (JST[path]) {
+    //      return JST[path];
+    //    }
+    //
+    //    // If it does not exist in the JST object, mark this function as
+    //    // asynchronous.
+    //    var done = this.async();
+    //
+    //    // Fetch via jQuery's GET.  The third argument specifies the dataType.
+    //    $.get(App.root + path, function(contents) {
+    //      // Assuming you're using underscore templates, the compile step here is
+    //      // `_.template`.
+    //      done(_.template(contents));
+    //    }, 'text');
+    //}
   });
 
   // for debug
   //window.store =  app.store;
 
-  app.layout = new Backbone.Layout({
-    el: '#main',
-    template: 'layouts/main'
+  App.layout = new Backbone.Layout({
+    el: '#app-main',
+    template: '#layout'
   });
 
-  module.exports = app;
+  module.exports = App;
 });

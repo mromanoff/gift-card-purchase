@@ -1,43 +1,35 @@
 define(function (require, exports, module) {
-  'use strict';
+    'use strict';
 
-  var Backbone = require('backbone');
-  var msgBus = require('msgbus');
+    var Backbone = require('backbone');
 
-  // Defining the application router.
-  var Router = Backbone.Router.extend({
 
-    routes: {
-      '': 'step1',
-      'step2': 'step2',
-      'step3': 'step3',
-      'error': 'errorPage'
-    },
+    // Defining the application router.
+    module.exports = Backbone.Router.extend({
 
-    step1: function () {
-        console.log('route get step1:');
-      //  //msgBus.commands.execute('step1:get');
-      //var controller = require('./controllers/step1');
-      //controller.getStep();
+        routes: {
+            '': 'step1',
+            'step2': 'step2',
+            'step3': 'step3',
+            'error': 'errorPage'
+        },
 
-      msgBus.commands.execute('step1:get');
-    },
+        step1: function () {
+            console.log('route get step1:');
+            var Step1Module = require('./step1/module');
+            Step1Module.init();
+        },
 
-    step2: function () {
-      console.log('route get step2:');
-      msgBus.commands.execute('step2:get');
-    },
+        step2: function () {
+            console.log('route get step2:');
+            var Step1Module = require('./step2/module');
+            Step1Module.init();
+        },
 
-    step3: function () {
-      console.log('route get step3:');
-      msgBus.commands.execute('step3:get');
-    },
-
-    errorPage: function () {
-      console.log('route error');
-      msgBus.commands.execute('error:get');
-    }
-  });
-
-  module.exports = Router;
+        step3: function () {
+            console.log('route get step3:');
+            var Step1Module = require('./step3/module');
+            Step1Module.init();
+        }
+    });
 });
