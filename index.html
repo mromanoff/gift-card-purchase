@@ -144,11 +144,8 @@
 <script type="text/x-handlebars-template" id="step1">
     <h1 class="title">Step 1</h1>
     <div class="module tpl-textcallout dtm-pt-callout">
-
-        <section class="paragraph rich-content">
-            <select>
-
-            </select>
+     <section class="paragraph rich-content">
+            <select></select>
         </section>
 
         <section class="paragraph rich-content">
@@ -157,6 +154,10 @@
             </nav>
         </section>
     </div>
+</script>
+
+<script type="text/x-handlebars-template" id="option-item">
+    <option value="<%- itemNumber %>"><%- name %></option>
 </script>
 
 <script type="text/x-handlebars-template" id="step2">

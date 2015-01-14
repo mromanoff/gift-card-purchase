@@ -1,20 +1,13 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var app = require('app');
-    var msgBus = require('msgbus');
-    var View;
+    var helper = require('../common/helper');
 
-    View = Backbone.Layout.extend({
-        template: 'step3',
-
-        events: {
-        },
+    module.exports = Backbone.Layout.extend({
+        template: '#step3',
 
         initialize: function () {
-            msgBus.commands.execute('scroll:top');
+            helper.scrollTop();
         }
     });
-
-    module.exports = View;
 });

@@ -18,6 +18,18 @@ define(function (require, exports, module) {
             console.log('route get step1:');
             var Step1Module = require('./step1/module');
             Step1Module.init();
+        },
+
+        step2: function () {
+            console.log('route get step2:');
+            var Step1Module = require('./step2/module');
+            Step1Module.init();
+        },
+
+        step3: function () {
+            console.log('route get step3:');
+            var Step1Module = require('./step3/module');
+            Step1Module.init();
         }
     });
 });

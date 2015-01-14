@@ -1,28 +1,33 @@
 define(function (require, exports, module) {
     'use strict';
 
+    var helper = require('../common/helper');
+
+
+    var Item = Backbone.Layout.extend({
+        template: '#option-item',
+        el: false,
+
+        serialize: function () {
+            return this.model.toJSON();
+        }
+    });
+
+
     module.exports = Backbone.Layout.extend({
         template: '#step1',
 
-        events: {
-            //'click a': 'navigate'
-        },
-
         initialize: function () {
             console.log('collection in view', this.collection);
-            //msgBus.commands.execute('scroll:top');
+            helper.scrollTop();
         },
 
-        serialize: function () {
-            console.log('collection to json', this.collection.toJSON());
-            return {
-                giftCards: this.collection.toJSON()
-            };
-        },
-
-        navigate: function (e) {
-            e.preventDefault();
-            //msgBus.commands.execute('step2:get');
+        beforeRender: function () {
+            this.collection.each(function (item) {
+                this.insertView('select', new Item({
+                    model: item
+                }));
+            }, this);
         }
     });
 });
