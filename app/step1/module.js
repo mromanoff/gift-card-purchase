@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     var Collection = require('./collection');
     var Module = {};
 
+
     Module.init = function () {
         var collection  = new Collection();
 
